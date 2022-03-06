@@ -4,14 +4,21 @@
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-    let answer = 0;
     
-    for(let x of nums) {
-        if(x === target || x > target) break;
-        if(x < target) answer++;
+    let lt = 0;
+    let rt = nums.length - 1;
+
+    while (lt <= rt) {
+        let mid = parseInt((lt + rt) / 2);
+        if (nums[mid] === target) return mid;
+        else if (nums[mid] > target) {
+            rt = mid - 1;
+        } else {
+            lt = mid + 1;
+        }
     }
     
-    return answer;
-    
-  
+    return lt;
+
+
 };
