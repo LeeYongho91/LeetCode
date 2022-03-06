@@ -9,6 +9,4 @@ var strStr = function(haystack, needle) {
     
     return haystack.split(`${needle}`)[0].length;
     
-    
-    
 };
